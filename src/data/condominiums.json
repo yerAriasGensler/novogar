@@ -1,0 +1,25 @@
+{
+    "condominiums": [
+      {
+        "name": "Condominio Árbora",
+        "bgImg": "img/arbora-card.png",
+        "gif": "img/uniko-gif.gif",
+        "logo": "img/arbora-logo.png",
+        "tourSrc": "arboraTour",
+        "title": "Condominio Árbora",
+        "location": "San Francisco",
+        "description" : "Casas de dos plantas: 2 habitaciones, 2 baños y cochera techada para 2 vehículos"
+      },
+      {
+        "name": "Condominio Úniko",
+        "bgImg": "img/uniko-card.png",
+        "gif": "img/uniko-gif.gif",
+        "logo": "img/uniko-logo.png",
+        "tourSrc": "unikoTour",
+        "title": "Condominio Úniko",
+        "location": "San Francisco",
+        "description" : "Casas de dos plantas: con 3 habitaciones, 2.5 baños y cochera techada para 2 vehículos. "
+      }
+    ]
+  }
+  

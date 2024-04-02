@@ -1,0 +1,370 @@
+{
+  "locations": [
+    {
+      "id": "pano1",
+      "src": "img/360/uniko/01_FRONT.jpg",
+      "thumbnail": "img/360/uniko/01_FRONT.jpg",
+      "map": "img/map1.png",
+      "title": "Entrada Arbora",
+      "type": "house",
+      "waypoints": [
+        {
+          "id": "entrance",
+          "position": [-10, -1, 0],
+          "to": "pano2",
+          "pin_src": "img/waypointsIcons/frontPin.png",
+          "pin_src_hover": "img/waypointsIcons/frontPinHover.png"
+        },
+        {
+          "id": "amenitiesFromHouse",
+          "position": [-0.5, 0.5, 10],
+          "to": "pano12",
+          "pin_src": "img/waypointsIcons/amenitiesPin.png",
+          "pin_src_hover": "img/waypointsIcons/amenitiesPinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano2",
+      "src": "img/360/uniko/02_HALLWAY.jpg",
+      "thumbnail": "img/360/uniko/02_HALLWAY.jpg",
+      "map": "img/map2.png",
+      "title": "Pasillo",
+      "type": "house",
+      "icon": "img/hallwayIcon.svg",
+      "waypoints": [
+        {
+          "id": "secondFloorFromHallway",
+          "position": [-2, 0, 12],
+          "to": "pano6",
+          "pin_src": "img/waypointsIcons/secondFloorPin.png",
+          "pin_src_hover": "img/waypointsIcons/secondFloorPinHover.png"
+        },
+        {
+          "id": "livingFromHallway",
+          "position": [-10, -2, 0],
+          "to": "pano5",
+          "pin_src": "img/waypointsIcons/livingPin.png",
+          "pin_src_hover": "img/waypointsIcons/livingPinHover.png"
+        },
+        {
+          "id": "streetFromHallway",
+          "position": [-5, -3.8, 0],
+          "to": "pano1",
+          "pin_src": "img/waypointsIcons/returnStreetPin.png",
+          "pin_src_hover": "img/waypointsIcons/returnStreetPinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano3",
+      "src": "img/360/uniko/03_BACK_YARD.jpg",
+      "thumbnail": "img/360/uniko/03_BACK_YARD.jpg",
+      "map": "img/map3.png",
+      "title": "Patio",
+      "type": "house",
+      "icon": "img/yardIcon.svg",
+      "waypoints": [
+        {
+          "id": "livingFromYard",
+          "position": [-11, -3, -1],
+          "to": "pano5",
+          "pin_src": "img/waypointsIcons/livingPin.png",
+          "pin_src_hover": "img/waypointsIcons/livingPinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano4",
+      "src": "img/360/uniko/04_KITCHEN.jpg",
+      "thumbnail": "img/360/uniko/04_KITCHEN.jpg",
+      "map": "img/map4.png",
+      "title": "Cocina",
+      "type": "house",
+      "icon": "img/kitchenIcon.svg",
+      "waypoints": [
+        {
+          "id": "yardFromKitchen",
+          "position": [-14, -1, 3],
+          "to": "pano3",
+          "pin_src": "img/waypointsIcons/yardPin.png",
+          "pin_src_hover": "img/waypointsIcons/yardPinHover.png"
+        },
+        {
+          "id": "livingFromKitchen",
+          "position": [-5, -3, 10],
+          "to": "pano5",
+          "pin_src": "img/waypointsIcons/livingPin.png",
+          "pin_src_hover": "img/waypointsIcons/livingPinHover.png"
+        }
+      ],
+      "direction": "0"
+    },
+    {
+      "id": "pano5",
+      "src": "img/360/uniko/05_LIVING.jpg",
+      "thumbnail": "img/360/uniko/05_LIVING.jpg",
+      "map": "img/map5.png",
+      "title": "Sala",
+      "type": "house",
+      "icon": "img/livingIcon.svg",
+      "waypoints": [
+        {
+          "id": "yardFromLiving",
+          "position": [-2, -3, 10],         
+          "to": "pano3",
+          "pin_src": "img/waypointsIcons/yardPin.png",
+          "pin_src_hover": "img/waypointsIcons/yardPinHover.png"
+        },
+        {
+          "id": "hallwayFromLiving",
+          "position": [0, -3, -10],
+          "to": "pano2",
+          "pin_src": "img/waypointsIcons/hallwayPin.png",
+          "pin_src_hover": "img/waypointsIcons/hallwayPinHover.png"
+        },
+        {
+          "id": "kitchenFromLiving",
+          "position": [-8, -1, -13],
+          "to": "pano4",
+          "pin_src": "img/waypointsIcons/kitchenPin.png",
+          "pin_src_hover": "img/waypointsIcons/kitchenPinHover.png"
+        }
+      ],
+      "direction": "-180"
+    },
+    {
+      "id": "pano6",
+      "src": "img/360/uniko/06_STAIRS.jpg",
+      "thumbnail": "img/360/uniko/06_STAIRS.jpg",
+      "map": "img/map5.png",
+      "title": "Estudio",
+      "type": "house",
+      "icon": "img/officeIcon.svg",
+      "waypoints": [
+        {
+          "id": "mainBedFromStairs",
+          "position": [0, -3, 10],
+          "to": "pano8",
+          "pin_src": "img/waypointsIcons/mainBedroomPin.png",
+          "pin_src_hover": "img/waypointsIcons/mainBedroomPinHover.png"
+        },
+        {
+          "id": "secondBedFromStairs",
+          "position": [-3, -2, -8],
+          "to": "pano7",
+          "pin_src": "img/waypointsIcons/secondBedroomPin.png",
+          "pin_src_hover": "img/waypointsIcons/secondBedroomPinHover.png"
+        },
+        {
+          "id": "firstFloorFromStairs",
+          "position": [-6, -1, -4],
+          "to": "pano2",
+          "pin_src": "img/waypointsIcons/firstFloorPin.png",
+          "pin_src_hover": "img/waypointsIcons/firstFloorPinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano7",
+      "src": "img/360/uniko/07_SECOND_BEDROOM.jpg",
+      "thumbnail": "img/360/uniko/07_SECOND_BEDROOM.jpg",
+      "map": "img/map5.png",
+      "title": "Cuarto Secundario",
+      "type": "house",
+      "icon": "img/secondaryBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "officeFromSecondBed",
+          "position": [12, -2, -1],
+          "to": "pano6",
+          "pin_src": "img/waypointsIcons/officePin.png",
+          "pin_src_hover": "img/waypointsIcons/officePinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano8",
+      "src": "img/360/uniko/08_MAIN_BEDROOM.jpg",
+      "thumbnail": "img/360/uniko/08_MAIN_BEDROOM.jpg",
+      "map": "img/map5.png",
+      "title": "Cuarto Principal",
+      "type": "house",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "officeFromMainBed",
+          "position": [12, -2, 0],
+          "to": "pano6",
+          "pin_src": "img/waypointsIcons/officePin.png",
+          "pin_src_hover": "img/waypointsIcons/officePinHover.png"
+        },
+        {
+          "id": "bathroomFromMainBed",
+          "position": [-10, -1, 6],
+          "to": "pano9",
+          "pin_src": "img/waypointsIcons/bathroomPin.png",
+          "pin_src_hover": "img/waypointsIcons/bathroomPinHover.png"
+        }
+      ],
+      "direction": "0"
+    },
+    {
+      "id": "pano9",
+      "src": "img/360/uniko/09_BATHROOM.jpg",
+      "thumbnail": "img/360/uniko/09_BATHROOM.jpg",
+      "map": "img/map5.png",
+      "title": "Baño",
+      "type": "house",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "officeFromBathroom",
+          "position": [8, -2, -6],
+          "to": "pano8",
+          "pin_src": "img/waypointsIcons/mainBedroomPin.png",
+          "pin_src_hover": "img/waypointsIcons/mainBedroomPinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano10",
+      "src": "img/360/uniko/ENTRANCE.jpg",
+      "thumbnail": "img/360/uniko/ENTRANCE.jpg",
+      "map": "img/map5.png",
+      "title": "Acceso",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "houseFromEntrance",
+          "position": [-9, 2.2, -3.5],
+          "to": "pano1",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-70"
+    },
+    {
+      "id": "pano12",
+      "src": "img/360/uniko/CASA CLUB.jpg",
+      "thumbnail": "img/360/uniko/CASA CLUB.jpg",
+      "map": "img/map5.png",
+      "title": "Casa Club",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "coworkingFromCllub",
+          "position": [-6, 0, -4],
+          "to": "pano14",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-70"
+    },
+    {
+      "id": "pano14",
+      "src": "img/360/uniko/COWORKING.jpg",
+      "thumbnail": "img/360/uniko/COWORKING.jpg",
+      "map": "img/map5.png",
+      "title": "Coworking",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "piscinaFromCoworking",
+          "position": [2.1, -1.1, -6],
+          "to": "pano15",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-120"
+    },
+    {
+      "id": "pano15",
+      "src": "img/360/uniko/PISCINA.jpg",
+      "thumbnail": "img/360/uniko/PISCINA.jpg",
+      "map": "img/map5.png",
+      "title": "Piscina",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "canchaFromPiscina",
+          "position": [-3, 0, -5],
+          "to": "pano16",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-80"
+    },
+    {
+      "id": "pano16",
+      "src": "img/360/uniko/CANCHA.jpg",
+      "thumbnail": "img/360/uniko/CANCHA.jpg",
+      "map": "img/map5.png",
+      "title": "Cancha Fut 5",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "parqueFromCancha",
+          "position": [1, 0.2, -8],
+          "to": "pano11",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-80"
+    },
+    {
+      "id": "pano11",
+      "src": "img/360/uniko/PARQUE DE PERROS.jpg",
+      "thumbnail": "img/360/uniko/PARQUE DE PERROS.jpg",
+      "map": "img/map5.png",
+      "title": "Parque de Perros",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "senderosFromParque",
+          "position": [-6, 0.1, -3],
+          "to": "pano17",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-90"
+    },
+    {
+      "id": "pano17",
+      "src": "img/360/uniko/SENDEROS.jpg",
+      "thumbnail": "img/360/uniko/SENDEROS.jpg",
+      "map": "img/map5.png",
+      "title": "Senderos",
+      "type": "amenities",
+      "icon": "img/mainBedIcon.svg",
+      "waypoints": [
+        {
+          "id": "entraddaFromSenderos",
+          "position": [8, 0.3, -4],
+          "to": "pano1",
+          "pin_src": "img/waypointsIcons/continuePin.png",
+          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
+        }
+      ],
+      "direction": "-90"
+    }
+  ]
+}

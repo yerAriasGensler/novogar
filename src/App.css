@@ -1,0 +1,543 @@
+body {
+  background-color: #fff;
+}
+
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading-page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  flex-direction: column;
+}
+
+.loading {
+  width: 20vw !important;
+}
+
+#web-ui {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.location-btn {
+  width: 10vw;
+  margin: 0.1em;
+  pointer-events: all;
+  min-width: 50px;
+  opacity: 0.5;
+}
+
+.selected {
+  opacity: 1 !important;
+}
+
+.location-btn:hover {
+  width: 12vw;
+  opacity: 0.8 !important;
+}
+
+#web-logos {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 100;
+  pointer-events: none;
+}
+#web-logos img {
+  width: 30vw;
+  min-width: 20em;
+}
+
+#web-map {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10vw;
+  background-color: #6b6b6b55;
+  margin-right: 0.1em;
+  min-width: 50px;
+}
+
+.navbar {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+  height: 5.313rem;
+}
+
+@media (min-width: 1920px) {
+  .navbar{
+    height: 7.313rem !important;
+  }
+}
+
+.navbar img {
+  padding-right: 2em;
+}
+
+.menu {
+  justify-content: center;
+  flex-wrap: wrap;
+  /*padding-right: 15em;*/
+  align-items: center;
+}
+
+.menu button span {
+  font-family: sans-serif;
+  font-weight: revert;
+  font-size: smaller;
+  line-height: revert !important;
+}
+
+.menu button {
+  /*color: white;*/
+  font-weight: lighter;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  padding: 1px 16px;
+  pointer-events: all;
+}
+
+.parts-navbar {
+  width: 100vw;
+  height: 4.125rem;
+  position: absolute;
+  top: 5.313rem;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+  background-color: rgba(150, 150, 150, 0.5);
+}
+
+@media (min-width: 1920px) {
+  .parts-navbar{
+    top: 7.313rem !important;
+  }
+}
+
+.menu-items {
+  color: white;
+  font-weight: revert;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  margin: 0px 30px;
+  pointer-events: all;
+  font-family: "Raleway";
+  font-size: 0.8rem;
+  line-height: revert !important;
+}
+
+@media (min-width: 1920px) {
+  .menu-items{
+    font-size: 1rem !important;
+  }
+}
+
+.social-media {
+  display: flex;
+  height: auto;
+  justify-content: start;
+  align-items: center;
+  margin-left: 81px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .social-media {
+    justify-content: center;
+  }
+}
+
+.social-media a {
+  width: auto;
+  height: auto;
+  padding-right: 1rem;
+}
+
+.social-media img {
+  pointer-events: all;
+  padding: 0;
+  max-width: 10vh;
+}
+
+.novogar-logo {
+  align-self: center;
+  width: 10.3vw;
+  max-width: 50vh;
+}
+
+.uniko-logo {
+  align-self: center;
+  width: 15.3vw;
+  max-width: 50vh;
+}
+
+.room-box {
+  width: 100vw;
+  position: absolute;
+  right: 18.5em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .room-box {
+    right: 13.5em;
+  }
+}
+
+.label-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #ffffff;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.landing-page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/*.div-img {
+  width: 60vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.landing-img {
+  width: 60vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  object-fit: contain;
+}*/
+
+.div-img {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden; /* ensure the gradient doesn't overflow */
+}
+
+/*.div-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}*/
+
+.landing-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* fill the container without distorting the image */
+  object-position: center;
+}
+
+.landing-column {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.landing-column > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .landing-column > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 65%;
+  }
+}
+
+.landing-text {
+  font-size: 1em;
+  line-height: 1.2;
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  color: #FF0000;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .landing-text {
+    font-size: 0.9em;
+  }
+}
+
+.landing-text-description {
+  font-size: 1.183rem;
+  line-height: 1.2;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  color: #313131;
+}
+
+.show-tour-button {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 4px 2px -2px rgb(189, 189, 189);
+  margin-bottom: 20px;
+  align-self: end;
+  font-family: "Questrial", sans-serif;
+  margin-right: auto;
+  width: 100%;
+}
+
+.gallery {
+  align-items: center;
+  width: 70%;
+  justify-content: end;
+  height: 78vh;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    height: 78vh;
+    display: flex;
+    margin-right: 0;
+    margin-top: 40px;
+  }
+}
+
+.gallery img {
+  /*height: auto;
+  width: 33.33%;
+  max-width: 20vw;*/
+}
+
+.waypoint-text {
+  color: #ffffff;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.loading-button {
+  opacity: 0.5 !important;
+  cursor: progress !important;
+  background-color: #ff4b4b !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 768px) {
+  .novogar-logo {
+    width: 40vw !important;
+  }
+
+  .uniko-logo {
+    align-self: center;
+    width: 60vw;
+  }
+}
+
+.card-container{
+  width: 24rem;
+}
+
+@media (min-width: 1920px) {
+  .card-container{
+    width: 34.875rem !important;
+    height: 52.875rem !important;
+  }
+}
+
+.mask-box {
+  border-radius: 20px;
+  position: relative;
+  background: transparent;
+  border: 1px solid #fff;
+  height: 31.32px;
+  width: 100%;
+}
+.mask-box .mask {
+  width: 50%;
+  height: 31.32px;
+  border-radius: 20px;
+  background: white;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+.mask-box .MuiButton-root {
+  border-radius: 20px;
+  width: 50%;
+  height: 31.32px;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.708rem;
+  transition: all 0.2s 0.1s ease;
+  text-transform: capitalize;
+}
+
+@media (min-width: 1920px) {
+
+  .mask-box .MuiButton-root {
+    font-size: 0.908rem;
+  }
+}
+
+.mask-box .MuiButton-root:hover {
+  opacity: 0.8;
+}
+
+.css-k008qs {
+  width: 201.69px;
+}
+
+.gradient-parts {
+  background-color: rgba(0, 0, 0, 0.3); 
+  backdrop-filter: blur(254px);
+}
+
+.gradient-navbar {
+  background-color: rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(254px);
+}
+
+#back-to-home {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 1920px) {
+
+  #back-to-home {
+    font-size: 1rem;
+  }
+}
+
+
+.a-enter-vr.fullscreen .a-enter-vr-button {
+  background-image:  url('../public/img/fullscreen.png') !important;
+  width: 191px;
+  height: 45px;
+  background-color: transparent !important;
+  margin-right: 81px;
+  bottom: 35px;
+}
+
+.a-enter-vr.fullscreen .a-enter-vr-button:hover {
+  background-image: url('../public/img/fullscreen-hover.png') !important;
+
+}
+
+
+.a-enter-vr {
+  right: 0 !important;
+  bottom: 0 !important;
+}
