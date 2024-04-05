@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import CondominiumCard from "../condominiumCard/condominiumCard.js";
 
 export const Landing = ({ condominiumsData, loading, setShowLanding, condominiumTourSelected}) => {
+
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handleNextButtonClick = () => {
+    setStartIndex((prevIndex) => {
+      const nextIndex = (prevIndex + 1) % condominiumsData.condominiums.length;
+      return nextIndex;
+    });
+  };
 
   return (
     <>
@@ -18,13 +27,15 @@ export const Landing = ({ condominiumsData, loading, setShowLanding, condominium
                 </p>
               </div>
               <div className="gallery  md:flex mr-10 md:mr-20 space-x-4">
-              {condominiumsData.condominiums.map((condominium, i) => (
-                <CondominiumCard loading={loading} setShowLanding={setShowLanding} img={condominium.bgImg} gif={condominium.gif} name={condominium.name} 
+              {[condominiumsData.condominiums[startIndex], condominiumsData.condominiums[(startIndex + 1) % condominiumsData.condominiums.length]].map((condominium, i) => (
+                <CondominiumCard key={condominium.name} loading={loading} setShowLanding={setShowLanding} img={condominium.bgImg} gif={condominium.gif} name={condominium.name} 
                   location={condominium.location} description={condominium.description} tourSrc={condominium.tourSrc} 
                   condominiumTourSelected={condominiumTourSelected} 
                 />
               ))}
-                
+                <button onClick={handleNextButtonClick}>
+                  <img className="w-[28px] h-[58px]" src="img/carouselArrow.png"/>
+                </button>
               </div>
             </div>
           </div>

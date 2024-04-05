@@ -7,7 +7,6 @@ export const CondominiumCard = ({ loading, setShowLanding, img, gif, name, locat
 
 
     const onClickCondominium = (tourSrc, name) => {
-        setShowLanding(false); 
         condominiumTourSelected(tourSrc, name);
     }
   

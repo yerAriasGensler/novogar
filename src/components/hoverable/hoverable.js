@@ -11,7 +11,6 @@ AFRAME.registerComponent('hoverable', {
     init: function () {
 
       this.el.addEventListener('mouseenter', (e) => {
-        console.log(this.data);
         this.el.setAttribute('scale', `${scaleBig[0]} ${scaleBig[1]} ${scaleBig[2]}`);
         this.el.setAttribute('src', this.data.pin_src_hover);
       })

@@ -17,19 +17,19 @@ export const Navbar = ({ showLanding, tourData, condominiumData }) => {
             </a>
           </div>
           
-          {!showLanding &&
-          <div className="flex justify-center">
-            <img
-              className="uniko-logo"
-              src={!showLanding && condominiumData.logo}
-              alt="logos"
-            />
-          </div>
+          {!showLanding && condominiumData &&
+            <div className="flex justify-center">
+              <img
+                className="uniko-logo"
+                src={!showLanding && condominiumData.logo}
+                alt="logos"
+              />
+            </div>
           }
         </div>
       </div>
       {!showLanding && (
-        <CondominiumPartsNavbar tourData={tourData}/>
+        <CondominiumPartsNavbar tourData={tourData} condominiumData={condominiumData}/>
       )}
     </>
   );

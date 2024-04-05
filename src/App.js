@@ -3,7 +3,8 @@ import "./App.css";
 import "./components/waypoint/waypoint.js";
 import "./components/hoverable/hoverable.js";
 import "./components/map/map.js";
-import Tour from "./data/unikoTour.json";
+import UnikoTour from "./data/unikoTour.json";
+import ArboraTour from "./data/arboraTour.json";
 import CondominiumsData from "./data/condominiums.json";
 import Navbar from "./components/navbar/navbar.js";
 import Landing from "./components/landing/landing.js";
@@ -14,66 +15,99 @@ require("aframe-look-at-component");
 require("aframe");
 
 function App() {
-  const [tourData, setTourData] = useState(Tour);
-  const [actualLocation, setActualLocation] = useState(Tour.locations[9].id);
+  const [condominiumSelected, setCondominiumSelected ] = useState(CondominiumsData.condominiums[0]);
+  const [tourData, setTourData] = useState(condominiumSelected.tourSrc === "UnikoTour" ? UnikoTour : ArboraTour);
+  const [actualLocation, setActualLocation] = useState(condominiumSelected.tourSrc === "UnikoTour" ? UnikoTour.locations[9].id : ArboraTour.locations[9].id);
   const [showLanding, setShowLanding] = useState(true);
   const [rendering, setRendering] = useState(true);
   const [assetsLoading, setAssetsLoading] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [isInVR, setIsInVR] = useState(true);
-  const [condominiumSelected, setCondominiumSelected ] = useState(CondominiumsData.condominiums[0]);
   const condominiumsData = CondominiumsData;
 
   const condominiumTourSelected = (tourName, condominiumName) => {
-    import(`./data/${tourName}.json`).then((moduleData) => {
-      setTourData(moduleData);
-    }).catch((error) => {
-      console.error('Error loading module data:', error);
-    });
 
-    const condominium = condominiumsData.condominiums.find(condo => condo.name === condominiumName);
+    let selectedTourData;
+    let selectedLocationId;
+
+    if (tourName === "unikoTour") {
+      selectedTourData = UnikoTour;
+      selectedLocationId = UnikoTour.locations[9].id;
+    } else {
+      selectedTourData = ArboraTour;
+      selectedLocationId = ArboraTour.locations[0].id;
+    }
+
+    const condominium = condominiumsData.condominiums.find(
+      (condo) => condo.name === condominiumName
+    );
+
     setCondominiumSelected(condominium);
+    setTourData(selectedTourData);
+    setActualLocation(selectedLocationId);
+
+    setShowLanding(false);
+    
   }
 
   useEffect(() => {
-    window.localStorage.setItem("actualLocation", tourData.locations[9].id);
-    document.querySelector("a-scene").addEventListener("enter-vr", function () {
-      var vrMap = document.querySelector("#vr-map");
-      //vrMap.setAttribute("visible", true);
-    });
-    document.querySelector("a-scene").addEventListener("exit-vr", function () {
-      var vrMap = document.querySelector("#vr-map");
-      //vrMap.setAttribute("visible", false);
-    });
-    window.addEventListener("go-to", function (e) {
-      GoTo(e.detail.to);
-    });
+    if(!showLanding){
+      if(condominiumSelected.tourSrc === "unikoTour"){
+        window.localStorage.setItem("actualLocation", tourData.locations[9].id);
+      }else{
+        window.localStorage.setItem("actualLocation", tourData.locations[0].id);
+      }
+      
+      document.querySelector("a-scene").addEventListener("enter-vr", function () {
+        var vrMap = document.querySelector("#vr-map");
+        //vrMap.setAttribute("visible", true);
+      });
+      document.querySelector("a-scene").addEventListener("exit-vr", function () {
+        var vrMap = document.querySelector("#vr-map");
+        //vrMap.setAttribute("visible", false);
+      });
+      window.addEventListener("go-to", function (e) {
+        GoTo(e.detail.to);
+      });
 
-    // Get a-assets
-    var assets = document.querySelector("a-assets");
+      // Get a-assets
+      var assets = document.querySelector("a-assets");
 
-    // On assets loaded event do something
-    assets.addEventListener("loaded", function (e) {
-      console.log("Assets loaded");
-      setAssetsLoading(false);
-    });
+      // On assets loaded event do something
+      assets.addEventListener("loaded", function (e) {
+        console.log("Assets loaded");
+        setAssetsLoading(false);
+      });
 
-    document.querySelector("a-scene").addEventListener("loaded", function () {
-      setRendering(false);
-    });
+      document.querySelector("a-scene").addEventListener("loaded", function () {
+        setRendering(false);
+      });
 
-    // Set enter vr and exit vr events
-    document
-      .querySelector("a-scene")
-      .addEventListener("enter-vr", () => setIsInVR(true));
-    document
-      .querySelector("a-scene")
-      .addEventListener("exit-vr", () => setIsInVR(false));
-  }, []);
+      // Set enter vr and exit vr events
+      document
+        .querySelector("a-scene")
+        .addEventListener("enter-vr", () => setIsInVR(true));
+      document
+        .querySelector("a-scene")
+        .addEventListener("exit-vr", () => setIsInVR(false));
+    }
+  }, [showLanding]);
 
   useEffect(() => {
     if (!rendering && !assetsLoading) setLoading(false);
   }, [rendering, assetsLoading]);
+
+  useEffect(() => {
+    const buttonEntity = document.querySelector('.a-enter-vr-button');
+
+    if(buttonEntity){
+      if (showLanding) {
+        buttonEntity.style.visibility = "hidden";
+      } else {
+        buttonEntity.style.visibility = "visible";
+      }
+    }
+    }, [showLanding]);
 
   const GoTo = (to) => {
     // Trigger custon go-to event with to as parameter
@@ -167,6 +201,7 @@ function App() {
         </div>
       )}
 
+{!showLanding &&
       <a-scene
         renderer="antialias: true"
         loading-screen="enabled:false"
@@ -237,7 +272,7 @@ function App() {
         <a-sky
           id="sky"
           rotation="0 -70 0"
-          src={`#img-${tourData.locations[9].id}`}
+          src={`#img-${condominiumSelected.tourSrc === "UnikoTour" ? UnikoTour.locations[9].id : ArboraTour.locations[0].id}`}
         ></a-sky>
 
         <a-sound
@@ -249,6 +284,8 @@ function App() {
         ></a-sound>
         <a-sound id="steps-sound" src="src: url(sound/pop.mp3)"></a-sound>
       </a-scene>
+
+          }
     </div>
   );
 }

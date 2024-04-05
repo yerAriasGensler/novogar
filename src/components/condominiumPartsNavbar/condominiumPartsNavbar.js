@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export const CondominiumPartsNavbar = ({ tourData }) => {
+export const CondominiumPartsNavbar = ({ tourData, condominiumData }) => {
   const [selectedPartButton, setSelectedPartButton] = useState(null);
   const [selectedButton, setSelectedButton] = useState("house");
   const [backHomeIsHover, setBackHomeIsHover] = useState(false);
@@ -28,7 +28,7 @@ export const CondominiumPartsNavbar = ({ tourData }) => {
 
   const arraySelected =
     selectedButton != null
-      ? tourData.locations.filter((location) => location.type === selectedButton)
+      ? tourData?.locations?.filter((location) => location.type === selectedButton)
       : null;
 
   const switchCondominiumPart = (selected) => {
@@ -94,7 +94,7 @@ export const CondominiumPartsNavbar = ({ tourData }) => {
                       switchCondominiumPartAmenHous("house");
                       let event = new CustomEvent("go-to", {
                         detail: {
-                          to: "pano1",
+                          to: condominiumData.tourSrc === "arboraTour" ? "pano10" : "pano1",
                         },
                       });
                       window.dispatchEvent(event);
