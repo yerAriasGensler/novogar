@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export const CondominiumPartsNavbar = ({ tourData, condominiumData }) => {
+export const CondominiumPartsNavbar = ({ tourData, condominiumData, amenitiesActive }) => {
   const [selectedPartButton, setSelectedPartButton] = useState(null);
   const [selectedButton, setSelectedButton] = useState("house");
   const [backHomeIsHover, setBackHomeIsHover] = useState(false);
+  const [subType, setSubType] = useState(amenitiesActive ? "amenities" : "house");
 
   useEffect(() => {
     // On goto window event change selectedPartButton to the new location
@@ -53,11 +54,6 @@ export const CondominiumPartsNavbar = ({ tourData, condominiumData }) => {
     };
   };
 
-
-  const [subType, setSubType] = useState("house");
-
-
-
   return (
     <>
       {arraySelected && (
@@ -79,15 +75,15 @@ export const CondominiumPartsNavbar = ({ tourData, condominiumData }) => {
                   <Box
                     className="mask"
                     style={{
-                      transform: `translateX(${subType === "house" ? 0 : "100px"})`
+                      transform: `translateX(${selectedButton === "house" ? 0 : "100px"})`
                     }}
                   />
                   <Button
                     disableRipple
                     variant="text"
-                    sx={{ color: subType === "house" ? "#FF0000" : "#FFFFFF"}}
+                    sx={{ color: selectedButton === "house" ? "#FF0000" : "#FFFFFF"}}
                     style={{
-                      fontWeight: `${subType === "house" ? "bold" : "normal"}`
+                      fontWeight: `${selectedButton === "house" ? "bold" : "normal"}`
                     }}
                     onClick={() => {
                       setSubType("house")
@@ -105,9 +101,9 @@ export const CondominiumPartsNavbar = ({ tourData, condominiumData }) => {
                   <Button
                     disableRipple
                     variant="text"
-                    sx={{ color: subType === "amenities" ? "#FF0000" : "#FFFFFF"}}
+                    sx={{ color: selectedButton === "amenities" ? "#FF0000" : "#FFFFFF"}}
                     style={{
-                      fontWeight: `${subType === "amenities" ? "bold" : "normal"}`
+                      fontWeight: `${selectedButton === "amenities" ? "bold" : "normal"}`
                     }}
                     onClick={() => {
                       setSubType("amenities")

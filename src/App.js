@@ -24,6 +24,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [isInVR, setIsInVR] = useState(true);
   const condominiumsData = CondominiumsData;
+  const [amenitiesActive, setAmenitiesActive] = useState(false);
 
   const condominiumTourSelected = (tourName, condominiumName) => {
 
@@ -154,6 +155,12 @@ function App() {
         skybox.setAttribute("rotation", `0 ${newDirection} 0`);
         waypointContainer.setAttribute("rotation", `0 ${newDirection} 0`);
         fadeEl.emit("fadeout");
+
+        if(location.type === "amenities"){
+          setAmenitiesActive(true);
+        }else{
+          setAmenitiesActive(false);
+        }
       }, 1000);
 
       setActualLocation(to);
@@ -193,7 +200,7 @@ function App() {
         <img className="loading" src={"img/loading.gif"} alt="loading" />
       </div>
 
-      <Navbar showLanding={showLanding} tourData={tourData} condominiumData={condominiumSelected}/>
+      <Navbar showLanding={showLanding} tourData={tourData} condominiumData={condominiumSelected} amenitiesActive={amenitiesActive}/>
 
       {!showLanding && (
         <div className="room-box bottom-[41px] md:bottom-[41px]">
@@ -271,7 +278,7 @@ function App() {
         
         <a-sky
           id="sky"
-          rotation={`${condominiumSelected.tourSrc === "UnikoTour" ? "0 -70 0" : "0 -90 0"}`}
+          rotation={`${condominiumSelected.tourSrc === "UnikoTour" ? "0 -70 0" : "0 -70 0"}`}
           src={`#img-${condominiumSelected.tourSrc === "UnikoTour" ? UnikoTour.locations[9].id : ArboraTour.locations[0].id}`}
         ></a-sky>
 

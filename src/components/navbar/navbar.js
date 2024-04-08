@@ -1,7 +1,7 @@
 import React from "react";
 import CondominiumPartsNavbar from "../condominiumPartsNavbar/condominiumPartsNavbar";
 
-export const Navbar = ({ showLanding, tourData, condominiumData }) => {
+export const Navbar = ({ showLanding, tourData, condominiumData, amenitiesActive }) => {
 
   return (
     <>
@@ -29,7 +29,7 @@ export const Navbar = ({ showLanding, tourData, condominiumData }) => {
         </div>
       </div>
       {!showLanding && (
-        <CondominiumPartsNavbar tourData={tourData} condominiumData={condominiumData}/>
+        <CondominiumPartsNavbar tourData={tourData} condominiumData={condominiumData} amenitiesActive={amenitiesActive}/>
       )}
     </>
   );
