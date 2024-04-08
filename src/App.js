@@ -271,7 +271,7 @@ function App() {
         
         <a-sky
           id="sky"
-          rotation="0 -70 0"
+          rotation={`${condominiumSelected.tourSrc === "UnikoTour" ? "0 -70 0" : "0 -90 0"}`}
           src={`#img-${condominiumSelected.tourSrc === "UnikoTour" ? UnikoTour.locations[9].id : ArboraTour.locations[0].id}`}
         ></a-sky>
 
