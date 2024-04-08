@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export const CondominiumPartsNavbar = ({ tourData, condominiumData, amenitiesActive }) => {
+export const CondominiumPartsNavbar = ({ tourData, condominiumData, amenitiesActive, setShow2DImage, setImage2D }) => {
   const [selectedPartButton, setSelectedPartButton] = useState(null);
   const [selectedButton, setSelectedButton] = useState("house");
   const [backHomeIsHover, setBackHomeIsHover] = useState(false);
@@ -33,6 +33,21 @@ export const CondominiumPartsNavbar = ({ tourData, condominiumData, amenitiesAct
       : null;
 
   const switchCondominiumPart = (selected) => {
+    console.log(selected);
+
+    let location = tourData.locations.filter(
+      (location) => location.id == selected
+    );
+
+    console.log(location);
+
+    if(location[0].still_src){
+      setImage2D(location[0].still_src);
+      setShow2DImage(true);
+    }else{
+      setShow2DImage(false);
+    }
+
     setSelectedButton(selected);
     setSelectedPartButton(selected);
     let event = new CustomEvent("go-to", {
@@ -44,6 +59,7 @@ export const CondominiumPartsNavbar = ({ tourData, condominiumData, amenitiesAct
   };
 
   const switchCondominiumPartAmenHous = (selected) => {
+    setShow2DImage(false);
     setSelectedButton(selected);
   };
 

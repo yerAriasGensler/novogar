@@ -25,6 +25,9 @@ function App() {
   const [isInVR, setIsInVR] = useState(true);
   const condominiumsData = CondominiumsData;
   const [amenitiesActive, setAmenitiesActive] = useState(false);
+  const [show2DImage, setShow2DImage] = useState(false);
+  const [image2D, setImage2D] = useState("");
+
 
   const condominiumTourSelected = (tourName, condominiumName) => {
 
@@ -120,7 +123,6 @@ function App() {
       let stepsSound = document.getElementById("steps-sound");
       stepsSound.components.sound.playSound();
       setTimeout(() => {
-        var skybox = document.querySelector("#sky");
         if (isInVR) {
           var actualWaypoints = document.querySelector(`#${actualLocation}`);
           var goToWaypoints = document.querySelector(`#${to}`);
@@ -150,6 +152,9 @@ function App() {
 
         // Get waypoints container
         var waypointContainer = document.querySelector("#waypoint-container");
+
+        //var skyboxSrc = location.has360 ? `#img-${to}` : `${to}`;
+        var skybox = document.querySelector("#sky");
 
         skybox.setAttribute("src", `#img-${to}`);
         skybox.setAttribute("rotation", `0 ${newDirection} 0`);
@@ -192,6 +197,10 @@ function App() {
         <Landing condominiumsData={condominiumsData} loading={loading} setShowLanding={setShowLanding} condominiumTourSelected={condominiumTourSelected}/>       
       )}
 
+      {show2DImage && (
+        <img id="2d" className="z-[100] absolute w-full h-full object-cover	" src={image2D} alt="loading" />
+      )}
+
       <div className="z-[100] absolute bottom-[15px]">
         <SocialMedia />
       </div>
@@ -200,15 +209,15 @@ function App() {
         <img className="loading" src={"img/loading.gif"} alt="loading" />
       </div>
 
-      <Navbar showLanding={showLanding} tourData={tourData} condominiumData={condominiumSelected} amenitiesActive={amenitiesActive}/>
+      <Navbar showLanding={showLanding} tourData={tourData} condominiumData={condominiumSelected} amenitiesActive={amenitiesActive} setShow2DImage={setShow2DImage} setImage2D={setImage2D}/>
 
-      {!showLanding && (
+      {!showLanding && !show2DImage && (
         <div className="room-box bottom-[41px] md:bottom-[41px]">
           <img className="w-[156px] h-[35px]" src="img/moveImg.png" alt="logos"/>
         </div>
       )}
 
-{!showLanding &&
+    {!showLanding &&
       <a-scene
         renderer="antialias: true"
         loading-screen="enabled:false"

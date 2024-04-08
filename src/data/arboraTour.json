@@ -27,7 +27,7 @@
     },
     {
       "id": "pano2",
-      "src": "img/360/arbora/LIVING.jpg",
+      "src": "img/map5.png",
       "thumbnail": "img/360/arbora/LIVING.jpg",
       "map": "img/map5.png",
       "title": "Sala",
@@ -176,7 +176,8 @@
     },
     {
       "id": "pano101",
-      "src": "img/360/arbora/ENTRANCE.jpg",
+      "still_src" : "img/360/arbora/ENTRANCE.jpg",
+      "src": "",
       "thumbnail": "img/360/arbora/ENTRANCE.jpg",
       "map": "img/map5.png",
       "title": "Acceso",
@@ -203,9 +204,9 @@
       "icon": "img/mainBedIcon.svg",
       "waypoints": [
         {
-          "id": "coworkingFromCllub",
-          "position": [-6, 0, -4],
-          "to": "pano14",
+          "id": "houseFromCllub",
+          "position": [8, 0, -4],
+          "to": "pano10",
           "pin_src": "img/waypointsIcons/continuePin.png",
           "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
         }
@@ -213,46 +214,9 @@
       "direction": "-70"
     },
     {
-      "id": "pano14",
-      "src": "img/360/uniko/COWORKING.jpg",
-      "thumbnail": "img/360/uniko/COWORKING.jpg",
-      "map": "img/map5.png",
-      "title": "Coworking",
-      "type": "amenities",
-      "icon": "img/mainBedIcon.svg",
-      "waypoints": [
-        {
-          "id": "piscinaFromCoworking",
-          "position": [2.1, -1.1, -6],
-          "to": "pano15",
-          "pin_src": "img/waypointsIcons/continuePin.png",
-          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
-        }
-      ],
-      "direction": "-120"
-    },
-    {
-      "id": "pano15",
-      "src": "img/360/uniko/PISCINA.jpg",
-      "thumbnail": "img/360/uniko/PISCINA.jpg",
-      "map": "img/map5.png",
-      "title": "Piscina",
-      "type": "amenities",
-      "icon": "img/mainBedIcon.svg",
-      "waypoints": [
-        {
-          "id": "canchaFromPiscina",
-          "position": [-3, 0, -5],
-          "to": "pano16",
-          "pin_src": "img/waypointsIcons/continuePin.png",
-          "pin_src_hover": "img/waypointsIcons/continuePinHover.png"
-        }
-      ],
-      "direction": "-80"
-    },
-    {
       "id": "pano16",
-      "src": "img/360/uniko/CANCHA.jpg",
+      "still_src" : "img/360/arbora/CANCHA.jpg",
+      "src": "",
       "thumbnail": "img/360/uniko/CANCHA.jpg",
       "map": "img/map5.png",
       "title": "Cancha Fut 5",
@@ -271,7 +235,8 @@
     },
     {
       "id": "pano11",
-      "src": "img/360/uniko/PARQUE DE PERROS.jpg",
+      "still_src" : "img/360/arbora/PETPARK.jpg",
+      "src": "",
       "thumbnail": "img/360/uniko/PARQUE DE PERROS.jpg",
       "map": "img/map5.png",
       "title": "Parque de Mascotas",
@@ -290,7 +255,8 @@
     },
     {
       "id": "pano17",
-      "src": "img/360/uniko/SENDEROS.jpg",
+      "still_src" : "img/360/arbora/SENDERO.jpg",
+      "src": "",
       "thumbnail": "img/360/uniko/SENDEROS.jpg",
       "map": "img/map5.png",
       "title": "Senderos",

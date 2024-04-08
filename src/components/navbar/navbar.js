@@ -1,7 +1,7 @@
 import React from "react";
 import CondominiumPartsNavbar from "../condominiumPartsNavbar/condominiumPartsNavbar";
 
-export const Navbar = ({ showLanding, tourData, condominiumData, amenitiesActive }) => {
+export const Navbar = ({ showLanding, tourData, condominiumData, amenitiesActive, setShow2DImage, setImage2D }) => {
 
   return (
     <>
@@ -29,7 +29,7 @@ export const Navbar = ({ showLanding, tourData, condominiumData, amenitiesActive
         </div>
       </div>
       {!showLanding && (
-        <CondominiumPartsNavbar tourData={tourData} condominiumData={condominiumData} amenitiesActive={amenitiesActive}/>
+        <CondominiumPartsNavbar tourData={tourData} condominiumData={condominiumData} amenitiesActive={amenitiesActive} setShow2DImage={setShow2DImage} setImage2D={setImage2D}/>
       )}
     </>
   );
