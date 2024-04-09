@@ -256,7 +256,7 @@ function App() {
                 location.waypoints &&
                 location.waypoints.map((waypoint) => (
                   <>
-                    <img id={`waypoint-${waypoint.id}`} src={waypoint.pin_src} preload="false"/>
+                    <img id={`waypoint-${waypoint.id}`} src={waypoint.pin_src}/>
                   </>
                 ))
             )}
