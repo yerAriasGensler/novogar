@@ -187,12 +187,12 @@ function App() {
   return (
     <div className="App">
 
-      <div className="hidden">
+      <div className="opacity-0">
         {images.map((img, i) => (
             <img key={i} src={img} />
           ))}
       </div>
-      
+
       <Helmet>
         <meta charSet="utf-8" />
         <title>Uniko</title>
