@@ -187,7 +187,7 @@ function App() {
   return (
     <div className="App">
 
-      <div className="opacity-0">
+      <div className="absolute left-[-99999px]">
         {images.map((img, i) => (
             <img key={i} src={img} />
           ))}
