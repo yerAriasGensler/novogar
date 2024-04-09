@@ -28,6 +28,8 @@ function App() {
   const [show2DImage, setShow2DImage] = useState(false);
   const [image2D, setImage2D] = useState("");
 
+  const images = ["./img/360/arbora/FRONT.jpg","./img/360/uniko/ENTRANCE.jpg", "./img/arbora-gif.gif", "./img/uniko-gif.gif"];
+
 
   const condominiumTourSelected = (tourName, condominiumName) => {
 
@@ -184,6 +186,13 @@ function App() {
 
   return (
     <div className="App">
+
+      <div className="hidden">
+        {images.map((img, i) => (
+            <img key={i} src={img} />
+          ))}
+      </div>
+      
       <Helmet>
         <meta charSet="utf-8" />
         <title>Uniko</title>
