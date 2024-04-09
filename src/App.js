@@ -28,7 +28,10 @@ function App() {
   const [show2DImage, setShow2DImage] = useState(false);
   const [image2D, setImage2D] = useState("");
 
-  const images = ["./img/360/arbora/FRONT.jpg","./img/360/uniko/ENTRANCE.jpg", "./img/arbora-gif.gif", "./img/uniko-gif.gif", 
+  const images = ["./img/360/arbora/FRONT.jpg","./img/360/uniko/ENTRANCE.jpg", "./img/arbora-gif.gif", "./img/uniko-gif.gif"]
+    
+  const imagesTour = ["./img/360/arbora/SENDERO.jpg", "./img/360/arbora/PETPARK.jpg",
+    "./img/360/arbora/ENTRANCE.jpg", "./img/360/arbora/CANCHA.jpg",
     "./img/waypointsIcons/amenitiesPin.png", "./img/waypointsIcons/amenitiesPinHover.png", 
     "./img/waypointsIcons/bathroomPin.png", "./img/waypointsIcons/bathroomPinHover.png", 
     "./img/waypointsIcons/continuePin.png", "./img/waypointsIcons/continuePinHover.png",
@@ -45,7 +48,6 @@ function App() {
     "./img/waypointsIcons/yardPin.png", "./img/waypointsIcons/yardPinHover.png",
   ];
 
-
   const condominiumTourSelected = (tourName, condominiumName) => {
 
     let selectedTourData;
@@ -57,6 +59,11 @@ function App() {
     } else {
       selectedTourData = ArboraTour;
       selectedLocationId = ArboraTour.locations[0].id;
+      ArboraTour.locations.forEach(location => {
+        if (location.still_src) {
+            imagesTour.push(location.still_src);
+        }
+      });
     }
 
     const condominium = condominiumsData.condominiums.find(
@@ -241,7 +248,12 @@ function App() {
         </div>
       )}
 
-    {!showLanding &&
+    {!showLanding && <>
+      <div className="absolute left-[-99999px]">
+        {imagesTour.map((img, i) => (
+            <img key={i} src={img} />
+          ))}
+      </div>
       <a-scene
         renderer="antialias: true"
         loading-screen="enabled:false"
@@ -258,7 +270,7 @@ function App() {
                 location.waypoints &&
                 location.waypoints.map((waypoint) => (
                   <>
-                    <img id={`waypoint-${waypoint.id}`} src={waypoint.pin_src}/>
+                    <img id={`waypoint-${waypoint.id}`} src={waypoint.pin_src} preload="false"/>
                   </>
                 ))
             )}
@@ -324,8 +336,8 @@ function App() {
         ></a-sound>
         <a-sound id="steps-sound" src="src: url(sound/pop.mp3)"></a-sound>
       </a-scene>
-
-          }
+      </>
+      }
     </div>
   );
 }
