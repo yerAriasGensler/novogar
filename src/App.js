@@ -28,7 +28,22 @@ function App() {
   const [show2DImage, setShow2DImage] = useState(false);
   const [image2D, setImage2D] = useState("");
 
-  const images = ["./img/360/arbora/FRONT.jpg","./img/360/uniko/ENTRANCE.jpg", "./img/arbora-gif.gif", "./img/uniko-gif.gif"];
+  const images = ["./img/360/arbora/FRONT.jpg","./img/360/uniko/ENTRANCE.jpg", "./img/arbora-gif.gif", "./img/uniko-gif.gif", 
+    "./img/waypointsIcons/amenitiesPin.png", "./img/waypointsIcons/amenitiesPinHover.png", 
+    "./img/waypointsIcons/bathroomPin.png", "./img/waypointsIcons/bathroomPinHover.png", 
+    "./img/waypointsIcons/continuePin.png", "./img/waypointsIcons/continuePinHover.png",
+    "./img/waypointsIcons/firstFloorPin.png", "./img/waypointsIcons/firstFloorPinHover.png",
+    "./img/waypointsIcons/frontPin.png", "./img/waypointsIcons/frontPinHover.png",
+    "./img/waypointsIcons/hallwayPin.png", "./img/waypointsIcons/hallwayPinHover.png",
+    "./img/waypointsIcons/kitchenPin.png", "./img/waypointsIcons/kitchenPinHover.png",
+    "./img/waypointsIcons/livingPin.png", "./img/waypointsIcons/livingPinHover.png",
+    "./img/waypointsIcons/mainBedroomPin.png", "./img/waypointsIcons/mainBedroomPinHover.png",
+    "./img/waypointsIcons/officePin.png", "./img/waypointsIcons/officePinHover.png",
+    "./img/waypointsIcons/returnStreetPin.png", "./img/waypointsIcons/returnStreetPinHover.png",
+    "./img/waypointsIcons/secondBedroomPin.png", "./img/waypointsIcons/secondBedroomPinHover.png",
+    "./img/waypointsIcons/secondFloorPin.png", "./img/waypointsIcons/secondFloorPinHover.png",
+    "./img/waypointsIcons/yardPin.png", "./img/waypointsIcons/yardPinHover.png",
+  ];
 
 
   const condominiumTourSelected = (tourName, condominiumName) => {
