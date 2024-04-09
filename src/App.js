@@ -235,7 +235,7 @@ function App() {
       >
         <a-assets timeout="99999999999">
           {tourData.locations.map((location) => (
-            <img id={`img-${location.id}`} src={location.src} />
+            <img id={`img-${location.id}`} src={location.src} preload="false" />
           ))}
           {tourData.locations &&
             tourData.locations.map(
