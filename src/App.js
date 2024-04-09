@@ -233,7 +233,7 @@ function App() {
         cursor="rayOrigin: mouse; fuseTimeout: 0;"
         raycaster="objects: .clickable"
       >
-        <a-assets timeout="99999999999">
+        <a-assets timeout="0">
           {tourData.locations.map((location) => (
             <img id={`img-${location.id}`} src={location.src} preload="false" />
           ))}
