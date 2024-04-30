@@ -22,8 +22,8 @@ export const Landing = ({ condominiumsData, loading, setShowLanding, condominium
                   ¡Encontrá tu hogar <br/>ideal usando nuestra <br/> increíble galería 360º!
                 </p>
                 <p className="landing-text-description">
-                  Espacio para texto corto descriptor.<br/>
-                  Lorem ipsum in dolor sit.
+                    Te brindamos una experiencia inmersiva, nuestra <br/> tecnología de Realidad 
+                    Aumentada (RA) y <br/> Realidad Virtual (RV), te ayudarán a conocer tu nuevo hogar !
                 </p>
               </div>
               <div className="gallery  md:flex mr-10 md:mr-20 space-x-4">
